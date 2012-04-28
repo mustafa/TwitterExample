@@ -14,7 +14,6 @@
 		6DAFA6B2154BCF800040DF91 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DAFA6B1154BCF800040DF91 /* main.m */; };
 		6DAFA6B6154BCF800040DF91 /* TwitterAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DAFA6B5154BCF800040DF91 /* TwitterAppDelegate.m */; };
 		6DAFA6B9154BCF800040DF91 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DAFA6B7154BCF800040DF91 /* MainStoryboard.storyboard */; };
-		6DAFA6BC154BCF800040DF91 /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DAFA6BB154BCF800040DF91 /* TwitterViewController.m */; };
 		6DAFA6C4154BCF800040DF91 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DAFA6C3154BCF800040DF91 /* SenTestingKit.framework */; };
 		6DAFA6C5154BCF800040DF91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DAFA6A5154BCF800040DF91 /* UIKit.framework */; };
 		6DAFA6C6154BCF800040DF91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DAFA6A7154BCF800040DF91 /* Foundation.framework */; };
@@ -46,8 +45,6 @@
 		6DAFA6B4154BCF800040DF91 /* TwitterAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwitterAppDelegate.h; sourceTree = "<group>"; };
 		6DAFA6B5154BCF800040DF91 /* TwitterAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwitterAppDelegate.m; sourceTree = "<group>"; };
 		6DAFA6B8154BCF800040DF91 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		6DAFA6BA154BCF800040DF91 /* TwitterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwitterViewController.h; sourceTree = "<group>"; };
-		6DAFA6BB154BCF800040DF91 /* TwitterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
 		6DAFA6C2154BCF800040DF91 /* TwitterTestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterTestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DAFA6C3154BCF800040DF91 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		6DAFA6CB154BCF800040DF91 /* TwitterTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TwitterTestTests-Info.plist"; sourceTree = "<group>"; };
@@ -123,8 +120,6 @@
 				6DAFA6B7154BCF800040DF91 /* MainStoryboard.storyboard */,
 				6DAFA6DC154BCFF70040DF91 /* TwitterTableViewController.h */,
 				6DAFA6DD154BCFF70040DF91 /* TwitterTableViewController.m */,
-				6DAFA6BA154BCF800040DF91 /* TwitterViewController.h */,
-				6DAFA6BB154BCF800040DF91 /* TwitterViewController.m */,
 				6DAFA6AC154BCF800040DF91 /* Supporting Files */,
 			);
 			path = TwitterTest;
@@ -269,7 +264,6 @@
 			files = (
 				6DAFA6B2154BCF800040DF91 /* main.m in Sources */,
 				6DAFA6B6154BCF800040DF91 /* TwitterAppDelegate.m in Sources */,
-				6DAFA6BC154BCF800040DF91 /* TwitterViewController.m in Sources */,
 				6DAFA6DE154BCFF70040DF91 /* TwitterTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
