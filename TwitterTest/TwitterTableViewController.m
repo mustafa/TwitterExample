@@ -35,7 +35,9 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  //  [[self activity] setHidesWhenStopped:YES];
+    [[self navigationItem] setTitle:@"Loading..."];
+    
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     [params setObject:@"manilla" forKey:@"screen_name"];
     [params setObject:@"10" forKey:@"count"];
@@ -66,6 +68,7 @@
                  [self setTableData:timeline];
                  [self reloadInputViews];
                  [[self tableView] reloadData];
+                 [[self navigationItem] setTitle:@"Manilla tweets"];
              } 
              else { 
                  // Inspect the contents of jsonError
@@ -107,10 +110,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
-    NSDictionary * item = [[self tableData] objectAtIndex:[indexPath row]];
-    NSLog(@"%@",[item valueForKey:@"text"]);
-    [[cell textLabel] setText:[item valueForKey:@"text"]];
-    
+    if (cell == nil) 
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    if([self tableData] != nil)
+    {
+        NSDictionary * item = [[self tableData] objectAtIndex:[indexPath row]];
+        NSLog(@"%@",[item valueForKey:@"text"]);
+        [[cell textLabel] setText:[item valueForKey:@"text"]];
+    }
     return cell;
 }
 
