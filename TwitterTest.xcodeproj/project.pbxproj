@@ -21,6 +21,7 @@
 		6DAFA6CE154BCF800040DF91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DAFA6CC154BCF800040DF91 /* InfoPlist.strings */; };
 		6DAFA6D1154BCF800040DF91 /* TwitterTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DAFA6D0154BCF800040DF91 /* TwitterTestTests.m */; };
 		6DAFA6DE154BCFF70040DF91 /* TwitterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DAFA6DD154BCFF70040DF91 /* TwitterTableViewController.m */; };
+		6DAFA6E0154BD1A50040DF91 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DAFA6DF154BD1A50040DF91 /* Twitter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		6DAFA6D0154BCF800040DF91 /* TwitterTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwitterTestTests.m; sourceTree = "<group>"; };
 		6DAFA6DC154BCFF70040DF91 /* TwitterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterTableViewController.h; sourceTree = "<group>"; };
 		6DAFA6DD154BCFF70040DF91 /* TwitterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterTableViewController.m; sourceTree = "<group>"; };
+		6DAFA6DF154BD1A50040DF91 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DAFA6E0154BD1A50040DF91 /* Twitter.framework in Frameworks */,
 				6DAFA6A6154BCF800040DF91 /* UIKit.framework in Frameworks */,
 				6DAFA6A8154BCF800040DF91 /* Foundation.framework in Frameworks */,
 				6DAFA6AA154BCF800040DF91 /* CoreGraphics.framework in Frameworks */,
@@ -103,6 +106,7 @@
 		6DAFA6A4154BCF800040DF91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6DAFA6DF154BD1A50040DF91 /* Twitter.framework */,
 				6DAFA6A5154BCF800040DF91 /* UIKit.framework */,
 				6DAFA6A7154BCF800040DF91 /* Foundation.framework */,
 				6DAFA6A9154BCF800040DF91 /* CoreGraphics.framework */,

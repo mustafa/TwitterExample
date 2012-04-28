@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TwitterTableViewController : UITableViewController
+@interface TwitterTableViewController : UITableViewController <UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic,strong) NSArray* tableData;
 
 @end

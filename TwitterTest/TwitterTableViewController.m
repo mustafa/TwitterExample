@@ -6,13 +6,17 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#import "Twitter/Twitter.h"
 #import "TwitterTableViewController.h"
+
 
 @interface TwitterTableViewController ()
 
 @end
 
 @implementation TwitterTableViewController
+
+@synthesize tableData = _tableData;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,6 +36,43 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:@"manilla" forKey:@"screen_name"];
+    [params setObject:@"10" forKey:@"count"];
+    [params setObject:@"1" forKey:@"include_entities"];
+    [params setObject:@"1" forKey:@"include_rts"];
+    
+    //  Next, we create an URL that points to the target endpoint
+    NSURL *url = 
+    [NSURL URLWithString:@"http://api.twitter.com/1/statuses/user_timeline.json"];
+    
+    //  Now we can create our request.  Note that we are performing a GET request.
+    TWRequest *request = [[TWRequest alloc] initWithURL:url 
+                                             parameters:params 
+                                          requestMethod:TWRequestMethodGET];
+    [request performRequestWithHandler:
+     ^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+         
+         if (responseData) {
+             //  Use the NSJSONSerialization class to parse the returned JSON
+             NSError *jsonError;
+             NSArray *timeline = 
+             [NSJSONSerialization JSONObjectWithData:responseData 
+                                             options:NSJSONReadingMutableLeaves 
+                                               error:&jsonError];
+             
+             if (timeline) {
+                 // We have an object that we can parse
+                 [self setTableData:timeline];
+                 [self reloadInputViews];
+                 [[self tableView] reloadData];
+             } 
+             else { 
+                 // Inspect the contents of jsonError
+                 NSLog(@"%@", jsonError);
+             }
+         }
+     }];
 }
 
 - (void)viewDidUnload
@@ -50,24 +91,25 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"TwitterCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
+    NSDictionary * item = [[self tableData] objectAtIndex:[indexPath row]];
+    NSLog(@"%@",[item valueForKey:@"text"]);
+    [[cell textLabel] setText:[item valueForKey:@"text"]];
     
     return cell;
 }
